@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retrieval Chatbot | Amina Abdi</title>
+<meta name="description" content="A retrieval-augmented generation chatbot built with LangChain and OpenAI for the Google AI Club.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a href="../index.html" class="nav-name">Amina Abdi</a>
+  <div class="nav-links">
+    <a href="../index.html#work">Work</a>
+    <a href="../philosophy.html">Philosophy</a>
+    <a href="../index.html#experience">Experience</a>
+    <a href="../index.html#contact">Contact</a>
+  </div>
+  <div class="clock"></div>
+</nav>
+
+<header class="case-hero">
+  <div class="wrap" style="padding-inline:0">
+      <div class="case-hero-grid">
+        <div>
+      <span class="marker">06 · Applied AI</span>
+      <h1 class="case-title">Retrieval<br>Chatbot</h1>
+      <p class="case-sub">
+        A chatbot that reads your documents before it answers, and can show you
+        where the answer came from.
+      </p>
+        </div>
+        <div class="glass-mark" data-shape="document"></div>
+      </div>
+  </div>
+</header>
+
+<main class="wrap case-body" style="padding-bottom:4rem">
+
+  <dl class="case-facts">
+    <div><dt>Context</dt><dd>Google AI Club</dd></div>
+    <div><dt>My role</dt><dd>Retrieval pipeline, multi-file input</dd></div>
+    <div><dt>Year</dt><dd>2023 to 2024</dd></div>
+    <div><dt>Stack</dt><dd>LangChain, OpenAI, Python, PyPDF2</dd></div>
+  </dl>
+
+  <h2>The problem</h2>
+  <p>
+    A language model on its own will answer a question about your coursework
+    confidently and sometimes wrongly, and it cannot tell you which it is doing.
+    For anything a student might rely on, that is disqualifying. The useful
+    version is a model that is restricted to material you gave it and can point
+    back at the source.
+  </p>
+
+  <h2>What I built</h2>
+  <p>
+    A retrieval-augmented generation pipeline in LangChain: documents are chunked
+    and embedded, a question retrieves the passages closest to it, and only those
+    passages go to the model as context. Query comprehension improved by 25%
+    against our test set. I added multi-file input so a user could load a whole
+    semester of notes at once rather than one PDF at a time, which was the change
+    that moved satisfaction most.
+  </p>
+
+  <h2>Where the interface work was</h2>
+  <p>
+    The design problem in a RAG system is not the chat bubble. It is
+    <strong>calibrating trust</strong>. A user needs to know when the answer came
+    from their documents and when the model is improvising, because those two
+    answers deserve very different levels of confidence. Showing retrieved
+    sources alongside the response does more for usability than any amount of
+    conversational polish, and it is the thing I would build first if I started
+    again.
+  </p>
+
+  <p class="pull">
+    An answer with no visible source asks the user to trust it completely or not
+    at all. Neither is a reasonable thing to ask.
+  </p>
+
+  <h2>Ethics, concretely</h2>
+  <p>
+    Through the club's AI for Social Good projects I worked on ethical deployment
+    in education, which in practice meant arguing about specifics rather than
+    principles: what the system should refuse to answer, how to keep it from
+    doing a student's assignment outright, and how to make its limits visible
+    rather than discovered by accident.
+  </p>
+
+  <h2>What I took from it</h2>
+  <p>
+    That the hardest interface problems in AI are about uncertainty. A system that
+    is honest about what it does not know is more useful than one that is right
+    slightly more often, because only the first kind can be relied on.
+  </p>
+
+  <nav class="case-nav">
+    <a href="omgame.html">← OMGame</a>
+    <a href="../index.html#work">All work</a>
+  </nav>
+
+</main>
+
+<footer class="foot">
+  <span>Amina Abdi</span>
+  <span>&copy; 2026</span>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

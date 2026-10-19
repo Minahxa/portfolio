@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OMGame | Amina Abdi</title>
+<meta name="description" content="Secure multi-step authentication and live matchmaking for a multiplayer game platform.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a href="../index.html" class="nav-name">Amina Abdi</a>
+  <div class="nav-links">
+    <a href="../index.html#work">Work</a>
+    <a href="../philosophy.html">Philosophy</a>
+    <a href="../index.html#experience">Experience</a>
+    <a href="../index.html#contact">Contact</a>
+  </div>
+  <div class="clock"></div>
+</nav>
+
+<header class="case-hero">
+  <div class="wrap" style="padding-inline:0">
+      <div class="case-hero-grid">
+        <div>
+      <span class="marker">05 · Application development</span>
+      <h1 class="case-title">OMGame</h1>
+      <p class="case-sub">
+        An online multiplayer board game where the sign-up is the hardest screen,
+        because security and patience pull in opposite directions.
+      </p>
+        </div>
+        <div class="glass-mark" data-shape="board"></div>
+      </div>
+  </div>
+</header>
+
+<main class="wrap case-body" style="padding-bottom:4rem">
+
+  <dl class="case-facts">
+    <div><dt>Type</dt><dd>Desktop multiplayer application</dd></div>
+    <div><dt>My role</dt><dd>Authentication, interface components, database</dd></div>
+    <div><dt>Year</dt><dd>2025</dd></div>
+    <div><dt>Stack</dt><dd>JavaFX, MySQL, Docker</dd></div>
+  </dl>
+
+  <h2>The problem</h2>
+  <p>
+    A game platform with accounts, profiles, and competitive matchmaking has to
+    take security seriously, because stolen accounts are the whole economy. But every
+    verification step is a place where a new player gives up. The question was how
+    to be genuinely strict without feeling hostile on the way in.
+  </p>
+
+  <figure class="case-figure">
+    <img src="../assets/img/omgame.png" alt="The OMGame title screen showing the pixel-art logo with Start, Ranking and Help options">
+    <figcaption>The title screen: guest play sits behind Start, before any account is required.</figcaption>
+  </figure>
+
+  <h2>What I built</h2>
+  <ul>
+    <li><strong>Multi-step authentication</strong> with email verification, CAPTCHA, and two-factor, wired to a real email service with hashed credential storage.</li>
+    <li><strong>Interface components</strong> for login, profile, settings, and matchmaking, covering both registered and guest players.</li>
+    <li><strong>Database operations</strong> for accounts and matchmaking, syncing in real time across Docker-hosted environments.</li>
+    <li><strong>150+ automated unit and GUI tests</strong> to hold behaviour steady as the rest of the team changed things underneath.</li>
+  </ul>
+
+  <h2>The decision that mattered</h2>
+  <p>
+    Guest play. Letting someone into a match before asking them for anything means
+    the verification steps arrive only once they have a reason to care about the
+    account. Security that gates the thing you already want is tolerable; security
+    that gates the thing you have not tried yet is just a wall.
+  </p>
+
+  <p class="pull">
+    Every verification step is a place someone gives up. The fix wasn't fewer
+    steps. It was moving them after the fun.
+  </p>
+
+  <h2>What I took from it</h2>
+  <p>
+    Tests are a design tool. Writing 150+ interface cases forced me to name every
+    state a screen could be in, including the ones I had been quietly ignoring:
+    the half-filled form, the expired code, the match that never fills. Most had
+    no interface at all until a failing test pointed at them.
+  </p>
+
+  <nav class="case-nav">
+    <a href="gas-analytics.html">← Gas Plant Analytics</a>
+    <a href="ai-chatbot.html">Next: Retrieval Chatbot →</a>
+  </nav>
+
+</main>
+
+<footer class="foot">
+  <span>Amina Abdi</span>
+  <span>&copy; 2026</span>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design Philosophy | Amina Abdi</title>
+<meta name="description" content="The design values, process, and tools Amina Abdi has adopted and rejected.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-name">Amina Abdi</a>
+  <div class="nav-links">
+    <a href="index.html#work">Work</a>
+    <a href="philosophy.html" aria-current="page">Philosophy</a>
+    <a href="index.html#experience">Experience</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+  <div class="clock"></div>
+</nav>
+
+<header class="case-hero">
+  <div class="wrap" style="padding-inline:0">
+    <span class="marker">Design philosophy</span>
+    <h1 class="case-title">Make the<br>system legible.</h1>
+    <p class="case-sub">
+      What I believe design is for, how I work, and the tools I've kept
+      or thrown out along the way.
+    </p>
+  </div>
+</header>
+
+<main class="wrap case-body" style="padding-bottom:4rem">
+
+  <p class="pull">
+    Most software fails people not because it lacks power, but because it
+    never explains itself.
+  </p>
+
+  <h2>What I believe</h2>
+
+  <p>
+    For a year I explained technical systems to people who had not asked to
+    learn them. Someone would arrive with a device that had stopped doing the
+    one thing they needed, and the job was to turn a cause they could not see
+    into an action they could take. I came to think that is the whole of
+    design, and that an interface is just that same conversation, held in
+    advance, at scale.
+  </p>
+
+  <p>
+    So my first value is <strong>legibility over elegance</strong>. A system
+    should tell you what state it is in, what it just did, and what will happen
+    next. When SmartEnroll tells a student they are ineligible for a course, the
+    design failure would be stopping there. The useful thing is naming the
+    prerequisite they are missing and what unlocks it. We built the recursive
+    prerequisite relation into the schema specifically so the interface could
+    answer "why not?" instead of just "no."
+  </p>
+
+  <p>
+    My second value is that <strong>the hard part is usually underneath</strong>.
+    It is tempting to treat design as the layer you apply at the end. But the
+    reason Hobby+ could show a student their credit balance in one glance is that
+    the data model made credits a first-class entity rather than a derived
+    number. Interface problems are very often data problems wearing a costume.
+  </p>
+
+  <p>
+    My third value is <strong>designing for the person having a bad day</strong>.
+    Empty states, errors, and edge cases are where people actually need help, and
+    they are the first thing a deadline eats. I would rather ship four screens
+    with honest failure states than nine that only work when everything goes
+    right.
+  </p>
+
+  <h2>How I work</h2>
+
+  <p>
+    I start by writing the problem as a sentence from the user's side, not the
+    system's. For SmartEnroll that sentence was: <em>"I don't know what I'm
+    allowed to take next term, and finding out means opening five tabs."</em>
+    Every later decision got measured against it. If a feature did not shorten
+    that sentence, it did not go in.
+  </p>
+
+  <p>
+    Then I model before I draw. I sketch entities and relationships on paper
+    first, because the shape of the data determines what the interface can
+    honestly promise. On SmartEnroll our first ER diagram treated requirements
+    as a flat list; it could not express "this course satisfies either of these
+    two requirements," which meant the degree-progress screen would have lied.
+    Revising the model fixed a UI problem we had not yet built.
+  </p>
+
+  <p>
+    I build low fidelity and ugly on purpose. Early mockups in grayscale with
+    real text, never lorem ipsum, because fake content hides the places where
+    the writing has to do the work. Then I put it in front of someone outside
+    the team. Our Hobby+ onboarding flow was three steps long because the first
+    person we tested with asked, out loud, "wait, am I done?"
+  </p>
+
+  <p>
+    Finally I iterate against something measurable. This came from DeepRacer more
+    than from any design course: I tuned a reinforcement learning model lap after
+    lap, and the only thing that mattered was whether the car held the line. It
+    taught me to define what "better" means before changing anything, which I now
+    do with interfaces too.
+  </p>
+
+  <h2>Tools I've adopted</h2>
+
+  <ul>
+    <li><strong>Paper and a pen, first.</strong> Nothing lets me reject ten ideas as fast. The cost of throwing out a sketch is zero, which is exactly why I make more of them.</li>
+    <li><strong>ER diagrams as a design tool, not a deliverable.</strong> I now draw the data model before any screen. It has caught interface lies twice.</li>
+    <li><strong>Figma for structure, code for truth.</strong> I use Figma to agree on layout and hierarchy with a team, then move to real HTML and CSS early, because a static mockup cannot tell you how a page feels at 320px or on a slow connection.</li>
+    <li><strong>Kanban over sprints, for small teams.</strong> On four-to-five person student teams, a visible board of what is actually in flight beat ceremony we would not keep up.</li>
+    <li><strong>Writing the copy before the component.</strong> If I cannot write the error message, I do not understand the state yet.</li>
+  </ul>
+
+  <h2>Tools I've rejected</h2>
+
+  <ul>
+    <li>
+      <strong>High-fidelity mockups as a starting point.</strong> I used to open
+      Figma first and design in colour immediately. It made me defensive about
+      work I had already polished, and it hid structural problems behind nice
+      type. Grayscale first, colour last.
+    </li>
+    <li>
+      <strong>Component libraries chosen before the problem.</strong> Reaching
+      for a UI kit on day one quietly decides your layout, spacing, and
+      interaction vocabulary for you. This portfolio is hand-written HTML, CSS,
+      and JavaScript for exactly that reason. I wanted the type scale and the
+      motion to be arguments I had to make, not defaults I inherited.
+    </li>
+    <li>
+      <strong>Lorem ipsum.</strong> Placeholder text makes every layout look
+      like it works. Real content is where designs break, so I use it from the
+      first sketch.
+    </li>
+    <li>
+      <strong>Animating everything.</strong> My instinct used to be to fade and
+      slide every section into view. I have cut it back to one orchestrated
+      moment on arrival and motion that responds to something you did. Movement
+      that nobody asked for is noise, and it makes a page feel slower than it is.
+    </li>
+    <li>
+      <strong>Designing only the happy path.</strong> The honest reason I
+      rejected this is that I shipped it once, and watched a user hit a blank
+      screen with no explanation. Empty and error states are now part of the
+      first pass.
+    </li>
+  </ul>
+
+  <h2>What I'm still working on</h2>
+
+  <p>
+    Accessibility is the area where I know the most about what I do not yet do
+    well. I now check colour contrast and keyboard focus as a matter of course,
+    but I have not yet tested anything I have built with a screen reader user,
+    and I am aware that auditing for compliance is not the same as designing
+    with someone. That is the next thing I want to get right, and it is the gap
+    I would most like to close before I graduate.
+  </p>
+
+  <nav class="case-nav">
+    <a href="index.html">← Back to work</a>
+    <a href="index.html#contact">Get in touch</a>
+  </nav>
+
+</main>
+
+<footer class="foot">
+  <span>Amina Abdi</span>
+  <span>&copy; 2026</span>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

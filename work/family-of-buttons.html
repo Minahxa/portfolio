@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Family of Buttons | Amina Abdi</title>
+<meta name="description" content="Three teammates as three interactive buttons in a magnetic arena. The visual and interaction design, from first sketch to built result.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a href="../index.html" class="nav-name">Amina Abdi</a>
+  <div class="nav-links">
+    <a href="../index.html#work">Work</a>
+    <a href="../philosophy.html">Philosophy</a>
+    <a href="../index.html#experience">Experience</a>
+    <a href="../index.html#contact">Contact</a>
+  </div>
+  <div class="clock"></div>
+</nav>
+
+<header class="case-hero">
+  <div class="wrap" style="padding-inline:0">
+    <div class="case-hero-grid">
+      <div>
+        <span class="marker">01 · Interaction design</span>
+        <h1 class="case-title">A Family<br>of Buttons</h1>
+        <p class="case-sub">
+          An "about us" page where the team doesn't describe itself but behaves.
+          Three people, three buttons, one magnetic arena that lets you watch
+          them get along or fall out.
+        </p>
+      </div>
+      <div class="glass-mark" data-shape="orbit"></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap case-body" style="padding-bottom:4rem">
+
+  <dl class="case-facts">
+    <div><dt>Type</dt><dd>Interactive web experience</dd></div>
+    <div><dt>My role</dt><dd>Sole designer</dd></div>
+    <div><dt>Team</dt><dd>Three people</dd></div>
+    <div><dt>Built with</dt><dd>React, TypeScript, physics engine</dd></div>
+    <div><dt>Live</dt><dd><a href="https://sanskar-ucal.github.io/CPSC-581-Family-of-Buttons/#/" target="_blank" rel="noopener" style="border-bottom:1px solid var(--mist)">Open the project</a></dd></div>
+  </dl>
+
+  <h2>The brief, and the trap in it</h2>
+  <p>
+    The assignment was a family of buttons. The obvious answer is a tidy row of
+    shapes that share a style, and the obvious answer is also the boring one,
+    because a grid of buttons tells you nothing about the people behind it. I
+    pushed early for a harder version of the problem: what if the buttons
+    <em>were</em> us, and what if putting them on the same screen showed how we
+    actually get along?
+  </p>
+  <p>
+    I owned the design end to end on this project. The concept, the visual
+    system, and the interaction logic are all mine, from the first pencil
+    sketch through to the direction I held during the build.
+  </p>
+
+  <h2>Diverging on paper first</h2>
+  <p>
+    I started with pencil and paper, not software. It's the fastest way I know
+    to reject ten ideas cheaply. The first round was deliberately literal:
+    everyday objects standing in for people, a lamp, a teapot, a speaker, a
+    console.
+  </p>
+
+  <figure class="case-figure">
+    <img src="../assets/img/fob-objects.jpg" alt="Pencil sketch of a lamp, a teapot on a table, and a speaker, each labelled as a button">
+    <figcaption>First pass: hobbies as literal objects, each one a button.</figcaption>
+  </figure>
+
+  <p>
+    Then I pitched the concept that reframed the whole project: the
+    group as a pot of soup, each of us a different ingredient, a chilli, a
+    mushroom or a carrot, with the steam carrying our personalities and the
+    question of who dominates the flavour. It was far more abstract than
+    anything else on the table, and it reframed the project from "three
+    portraits" to "one system with three forces in it."
+  </p>
+
+  <figure class="case-figure">
+    <img src="../assets/img/fob-soup.jpg" alt="Pencil sketch of a pot of soup with labelled ingredients and rising steam">
+    <figcaption>My pot-of-soup concept: people as ingredients, the team as the dish.</figcaption>
+  </figure>
+
+  <h2>The move that unified it</h2>
+  <p>
+    Laying the sketches side by side, the problem was obvious: literal objects
+    at different scales would look like clutter on one screen, and nothing would
+    read as a family. I made the call to drop the objects entirely and unify on
+    a single circular form, then win the personality back a different way, with
+    <strong>one core icon per person at the centre and small badges orbiting the
+    rim</strong> for everything a single hobby can't capture.
+  </p>
+  <p>
+    That gave us cohesion and individuality at once, and it's the structure the
+    final product still ships with. I designed and drew the icon set for all
+    three buttons myself on my iPad, so the team had a finished piece to build
+    from rather than a description to interpret.
+  </p>
+
+  <figure class="case-figure">
+    <img src="../assets/img/fob-icons.jpg" alt="Digital drawing of three circular buttons in blue, red and green, each with a core icon and a name beneath">
+    <figcaption>The button family, drawn out: one circular form, three identities.</figcaption>
+  </figure>
+
+  <h2>Designing the behaviour</h2>
+  <p>
+    A button that only looks like a person is still a picture. The interaction
+    had to carry the idea, so I designed three versions on paper before
+    anything was built: avatars that clash, hobby objects that respond to a
+    tap, and finally the one that held: <strong>treat personality traits as
+    magnetic charge</strong>. Differences repel, shared traits attract, and
+    every collision reports back what it found.
+  </p>
+
+  <figure class="case-figure">
+    <img src="../assets/img/fob-versions.jpg" alt="Sketch sheet showing three numbered interaction versions with arrows between them">
+    <figcaption>Three versions of the interaction, and the reasoning for moving between them.</figcaption>
+  </figure>
+
+  <p>
+    I worked the attract case out specifically through music, with two buttons
+    that share a taste drifting together and surfacing a shared-interest marker.
+    I also designed the tap behaviour that pairs with it: press a button and its ring
+    pulses while a clip of that person's song plays. Sound turned out to be the
+    quickest way to make a flat circle feel like somebody.
+  </p>
+
+  <figure class="case-figure">
+    <img src="../assets/img/fob-music.jpg" alt="Sketch of two buttons connected by a music note, annotated as a shared interest in music">
+    <figcaption>Attraction, worked out through a shared interest in music.</figcaption>
+  </figure>
+
+  <p>
+    The last sketch resolved the whole polarity system: what a tap does, what a
+    clash does, and the detail I pushed for: that repulsion should
+    <em>accelerate</em> as opposites get closer, so the screen reads as genuinely
+    reluctant rather than politely bouncing.
+  </p>
+
+  <figure class="case-figure">
+    <img src="../assets/img/fob-polarity.jpg" alt="Final sketch of the button polarity logic, showing tap behaviour and repulsion between mismatched personalities">
+    <figcaption>Final logic: tap, pulse, play, and repulsion that speeds up as it resists.</figcaption>
+  </figure>
+
+  <p class="pull">
+    Opposites attract, like charges repel, every hit flips one. Once the rule
+    was that short, every interaction decision answered to it.
+  </p>
+
+  <h2>Carried into the build</h2>
+  <p>
+    I held the visual direction through implementation rather than handing off a
+    drawing and walking away, reviewing each build, flagging what wasn't
+    landing, and calling the changes. The pieces I drove hardest:
+  </p>
+  <ul>
+    <li><strong>The carousel</strong> on each personal page. A static grid of photos reads as a report; a carousel reads as someone showing you their pictures. It's the change that made the profiles feel personable, and it came together better than I'd hoped.</li>
+    <li><strong>The flip and its transition.</strong> Buttons flip polarity on contact, and the motion had to sell cause and effect. The flip is the moment the system explains itself without a word of copy.</li>
+    <li><strong>Music per person,</strong> on both the buttons and the profile pages.</li>
+    <li><strong>The personal page layout,</strong> with bio, gallery and personality data as a scrapbook rather than a dry profile.</li>
+  </ul>
+
+  <figure class="case-figure">
+    <img src="../assets/img/fob-final.jpg" alt="The built result: three circular buttons on a dark arena with orbiting badges and charge nodes">
+    <figcaption>The built result, with the circular family, orbiting badges and charge nodes intact.</figcaption>
+  </figure>
+
+  <h2>What I took from it</h2>
+  <p>
+    That the strongest design decision on this project was a subtraction. Giving
+    up the literal objects felt like losing the interesting part, and it was
+    exactly what let the personality come back as structure, a shared form, a
+    core icon, an orbit, instead of as decoration. I also learned how much
+    further a finished sketch travels than a description: the team agreed in
+    minutes on things we'd argued about for an hour, once I put something on
+    paper to point at.
+  </p>
+
+  <nav class="case-nav">
+    <a href="../index.html#work">← All work</a>
+    <a href="smartenroll.html">Next: SmartEnroll →</a>
+  </nav>
+
+</main>
+
+<footer class="foot">
+  <span>Amina Abdi</span>
+  <span>&copy; 2026</span>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

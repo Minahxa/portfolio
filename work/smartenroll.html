@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmartEnroll | Amina Abdi</title>
+<meta name="description" content="A course-planning and enrollment system built on a relational database.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a href="../index.html" class="nav-name">Amina Abdi</a>
+  <div class="nav-links">
+    <a href="../index.html#work">Work</a>
+    <a href="../philosophy.html">Philosophy</a>
+    <a href="../index.html#experience">Experience</a>
+    <a href="../index.html#contact">Contact</a>
+  </div>
+  <div class="clock"></div>
+</nav>
+
+<header class="case-hero">
+  <div class="wrap" style="padding-inline:0">
+      <div class="case-hero-grid">
+        <div>
+      <span class="marker">02 · Database systems</span>
+      <h1 class="case-title">SmartEnroll</h1>
+      <p class="case-sub">
+        Course planning means cross-checking five university systems before you
+        can register for anything. SmartEnroll puts the answer in one place.
+      </p>
+        </div>
+        <div class="glass-mark" data-shape="database"></div>
+      </div>
+  </div>
+</header>
+
+<main class="wrap case-body" style="padding-bottom:4rem">
+
+  <dl class="case-facts">
+    <div><dt>Type</dt><dd>Relational database system</dd></div>
+    <div><dt>Team</dt><dd>Three people</dd></div>
+    <div><dt>My role</dt><dd>Front-end lead</dd></div>
+    <div><dt>Year</dt><dd>2025</dd></div>
+    <div><dt>Stack</dt><dd>MySQL, SQL, web front end</dd></div>
+  </dl>
+
+  <h2>The problem</h2>
+  <p>
+    Before a student can enroll, they need four things at once: what their degree
+    requires, what is offered this term, whether they meet the prerequisites, and
+    whether the course fits what they actually want to study. That information
+    lives in four different tools, so planning a semester is mostly manual
+    cross-referencing, and it is where mistakes happen.
+  </p>
+
+  <h2>What we built</h2>
+  <p>
+    A database-backed planning system that centralises it. Students declare a
+    major and minor, record completed courses, search by interest or eligibility,
+    see their degree progress, and enroll in sections. Administrators maintain
+    requirements and review enrollment. I led the front end, building the search,
+    degree-progress, and enrollment screens that sit on top of the schema.
+  </p>
+
+  <figure class="case-figure">
+    <img src="../assets/img/smartenroll-erd.png" alt="Entity-relationship diagram showing Student, Course, Section, Program, Semester, Interest, Department and Admin entities with their relationships">
+    <figcaption>The conceptual model: nine entities, with sections and required courses as weak entities.</figcaption>
+  </figure>
+
+  <h2>The decision that mattered</h2>
+  <p>
+    Making prerequisites a <strong>recursive relation on Course</strong> rather
+    than a text field. It costs more to model, but it is what lets the system
+    answer the question students actually have, not "are you eligible?" but
+    "what do I need first, and what does it unlock?" A flat list could only ever
+    say no.
+  </p>
+
+  <p class="pull">
+    Our first model would have made the degree-progress screen lie. Fixing it
+    fixed an interface we had not yet built.
+  </p>
+
+
+  <h2>What I took from it</h2>
+  <p>
+    Data modelling is interface design done early. Every promise the UI makes has
+    to be something the schema can answer, and the cheapest time to find out it
+    cannot is while the diagram is still on paper.
+  </p>
+
+  <nav class="case-nav">
+    <a href="family-of-buttons.html">← A Family of Buttons</a>
+    <a href="hobbyplus.html">Next: Hobby+ →</a>
+  </nav>
+
+</main>
+
+<footer class="foot">
+  <span>Amina Abdi</span>
+  <span>&copy; 2026</span>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

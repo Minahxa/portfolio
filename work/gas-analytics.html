@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gas Plant Analytics | Amina Abdi</title>
+<meta name="description" content="Dashboards turning raw energy production data into utilization and emissions decisions, built at a case hackathon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a href="../index.html" class="nav-name">Amina Abdi</a>
+  <div class="nav-links">
+    <a href="../index.html#work">Work</a>
+    <a href="../philosophy.html">Philosophy</a>
+    <a href="../index.html#experience">Experience</a>
+    <a href="../index.html#contact">Contact</a>
+  </div>
+  <div class="clock"></div>
+</nav>
+
+<header class="case-hero">
+  <div class="wrap" style="padding-inline:0">
+      <div class="case-hero-grid">
+        <div>
+      <span class="marker">04 · Data analytics</span>
+      <h1 class="case-title">Gas Plant<br>Analytics</h1>
+      <p class="case-sub">
+        Hundreds of gas plants across the Western Canadian Sedimentary Basin,
+        decades of production records, and one question: which facilities are
+        actually worth operating?
+      </p>
+        </div>
+        <div class="glass-mark" data-shape="bars"></div>
+      </div>
+  </div>
+</header>
+
+<main class="wrap case-body" style="padding-bottom:4rem">
+
+  <dl class="case-facts">
+    <div><dt>Context</dt><dd>HTC × Keyera × AWS case hackathon</dd></div>
+    <div><dt>Type</dt><dd>Analytics dashboards</dd></div>
+    <div><dt>My role</dt><dd>Front-end lead</dd></div>
+    <div><dt>Tools</dt><dd>AWS QuickSight, web app</dd></div>
+    <div><dt>Date</dt><dd>March 2025</dd></div>
+  </dl>
+
+  <h2>The problem</h2>
+  <p>
+    Energy operators sit on enormous volumes of production and emissions data,
+    most of it arriving as flat tables with no obvious shape. A plant manager
+    asking "where are we losing capacity?" or "which facilities are our emissions
+    outliers?" cannot answer either question by scrolling a spreadsheet. The data
+    is not missing. It is unreadable.
+  </p>
+
+  <h2>What we built</h2>
+  <p>
+    I led the front end. We built three connected views, each answering one
+    question rather than showing everything at once.
+  </p>
+  <ul>
+    <li><strong>Plant information.</strong> Every facility mapped across the basin, grouped by operational status, so coverage and inactivity are visible geographically.</li>
+    <li><strong>Utilization.</strong> Throughput against nameplate capacity, yield efficiency, and a ranked table of plants by utilization rate. The basin-wide figure came out at roughly 20%.</li>
+    <li><strong>Sustainability.</strong> Facilities where SF6 makes up an outsized share of total emissions, surfaced as a shortlist instead of a full registry.</li>
+  </ul>
+
+  <figure class="case-figure">
+    <img src="../assets/img/hackathon.png" alt="Analytics dashboard showing raw gas throughput, nameplate capacity, a utilization rate gauge, a ranked plant table, and a map of gas plants across western Canada">
+    <figcaption>The utilization view: headline figures first, the ranked table and map underneath for the follow-up question.</figcaption>
+  </figure>
+
+  <h2>The decision that mattered</h2>
+  <p>
+    Leading each view with a small number of headline figures and putting the
+    detail below them. A dashboard that opens with twelve charts makes the viewer
+    do the summarising, which is the work they came to avoid. Throughput,
+    capacity, and yield sit at the top because they are the numbers someone
+    repeats in a meeting; the ranked table and the map exist for the question
+    that comes next.
+  </p>
+
+  <p class="pull">
+    A dashboard that shows everything has decided nothing. The design work was
+    choosing what each screen refuses to show.
+  </p>
+
+
+  <h2>What I took from it</h2>
+  <p>
+    That the hardest part of analytics is editing. Every chart we cut made the
+    remaining ones easier to read, and the version we presented was far smaller
+    than the version we first built.
+  </p>
+
+  <nav class="case-nav">
+    <a href="hobbyplus.html">← Hobby+</a>
+    <a href="omgame.html">Next: OMGame →</a>
+  </nav>
+
+</main>
+
+<footer class="foot">
+  <span>Amina Abdi</span>
+  <span>&copy; 2026</span>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
