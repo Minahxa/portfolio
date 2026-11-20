@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RoomBridge | Amina Abdi</title>
+<meta name="description" content="An augmented reality system that lets a CAD expert teach someone to redesign their own room from anywhere. Sketches, prototypes and design reasoning.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a href="../index.html" class="nav-name">Amina Abdi</a>
+  <div class="nav-links">
+    <a href="../index.html#work">Work</a>
+    <a href="../philosophy.html">Philosophy</a>
+    <a href="../index.html#experience">Experience</a>
+    <a href="../index.html#contact">Contact</a>
+  </div>
+  <div class="clock"></div>
+</nav>
+
+<header class="case-hero">
+  <div class="wrap" style="padding-inline:0">
+    <div class="case-hero-grid">
+      <div>
+        <span class="marker">01 · Interaction design</span>
+        <h1 class="case-title">RoomBridge</h1>
+        <p class="case-sub">
+          Teaching someone to redesign their own room when you can't stand in
+          it with them. An expert works in CAD from anywhere, and the changes
+          appear in the learner's actual living room through their phone.
+        </p>
+      </div>
+      <div class="glass-mark" data-shape="portal"></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap case-body" style="padding-bottom:4rem">
+
+  <dl class="case-facts">
+    <div><dt>Type</dt><dd>Collaborative AR system</dd></div>
+    <div><dt>My role</dt><dd>Design, sketching and prototyping</dd></div>
+    <div><dt>Year</dt><dd>2026</dd></div>
+    <div><dt>Built with</dt><dd>iPhone LiDAR, ARKit, Blender</dd></div>
+  </dl>
+
+  <h2>Two people, one problem from opposite ends</h2>
+  <p>
+    An expert who knows Blender wants to teach someone remotely, but describing
+    how to move, scale and align a 3D object over a call is close to impossible.
+    The vocabulary doesn't survive the trip.
+  </p>
+  <p>
+    Meanwhile a novice wants to picture a cabinet above their counter or a
+    television over their fireplace. They have the idea. What they can't do is
+    connect a model on a screen to the room they're standing in, which is the
+    part that actually decides whether the idea is any good.
+  </p>
+  <p>
+    Both problems have the same shape: the gap between a CAD file and a physical
+    room. That gap is what we designed into.
+  </p>
+
+  <h2>Where I came in</h2>
+  <p>
+    I worked the design side of this project: the brainstorming, the sketching,
+    and the prototypes. The concepts were reached collectively as a group, and
+    the prototypes were built together with a design partner, which made this a
+    different kind of work from a project I own outright. Less deciding, more
+    making a case clearly enough that the group could agree on it.
+  </p>
+
+  <h2>Drawing the system before any screen</h2>
+  <p>
+    The first useful sketch wasn't an interface. It was the shape of the system,
+    because three people in three different places needed to look at the same
+    room through three different windows, and nobody could agree on who could
+    see what until it was on paper.
+  </p>
+
+  <figure class="case-figure">
+    <img src="../assets/img/rb-system.jpg" alt="Hand-drawn system diagram showing a novice's phone, a RoomBridge server, an expert's Blender view and an observer's laptop, with arrows for room scans, design changes and feedback">
+    <figcaption>The novice scans in AR, the expert works in Blender, observers watch in a browser, and the server keeps all three in the same room.</figcaption>
+  </figure>
+
+  <p>
+    Settling this early paid for itself. Once the three roles were drawn with
+    their arrows, questions like "can an observer move an object?" answered
+    themselves, and the feature list stopped drifting.
+  </p>
+
+  <h2>The novice's path, panel by panel</h2>
+  <p>
+    The hardest constraint was how little we could assume. The novice has never
+    opened CAD software, so every step had to carry exactly one decision. The
+    flow came out as five: join a room, scan it with LiDAR, receive the expert's
+    instruction, choose an object, then adjust it on the expert's advice.
+  </p>
+
+  <figure class="case-figure">
+    <img src="../assets/img/rb-flow.jpg" alt="Five-panel hand-drawn flow of the novice journey: join or create a room, scan the room with LiDAR, expert feedback, select an object, adjust according to the expert's advice">
+    <figcaption>Five panels, one decision each. Anything that needed CAD vocabulary was cut.</figcaption>
+  </figure>
+
+  <h2>The sketch that sold it</h2>
+  <p>
+    This one did the most work of anything I drew. The room as it is on the
+    left, the same room with an imagined television on the right, and the phone
+    that bridges them. It made the whole concept legible in a single glance, and
+    it is what we kept returning to whenever a conversation went abstract.
+  </p>
+
+  <figure class="case-figure">
+    <img src="../assets/img/rb-view.jpg" alt="Hand-drawn comparison of a living room before and after imagining a television above the fireplace, with a phone showing the augmented view">
+    <figcaption>Original space, imagined space, and the phone that sits between them.</figcaption>
+  </figure>
+
+  <h2>Choosing between three designs</h2>
+  <p>
+    We put three candidates against the same three criteria: remote
+    collaboration, real-time accuracy, and ease of use for someone with no CAD
+    background.
+  </p>
+  <ul>
+    <li><strong>Snapshot Review.</strong> The expert renders images of the proposed design and sends them back. Honest and simple, but every change costs another render-and-wait cycle, and the novice never sees it in their own space.</li>
+    <li><strong>Live AR with direct touch.</strong> Real-time and immediate, but the novice drags objects around a flat screen. Depth placement is genuinely hard that way, and nothing about it teaches.</li>
+    <li><strong>RoomBridge.</strong> Live AR, plus guided single-axis movement with haptic feedback when the object reaches its target, plus an approval loop where the novice proposes and the expert accepts, rejects or corrects.</li>
+  </ul>
+
+  <p class="pull">
+    The other two designs get a room designed. Only ours leaves the novice able
+    to do it themselves next time.
+  </p>
+
+  <p>
+    That was the argument that settled it. The brief was never really "place a
+    virtual sofa." It was "teach someone CAD in their own living room." Judged
+    against teaching rather than decorating, the approval loop and the guided
+    movement stop looking like extra features and start looking like the point.
+  </p>
+
+  <h2>From sketch to working build</h2>
+
+  <figure class="case-figure">
+    <img src="../assets/img/rb-built.jpg" alt="The built app showing a translucent chair placed in a real room in AR, with width, depth and height controls and a Waiting for Expert status">
+    <figcaption>The approval loop, built: a proposed chair sized in metres, holding at "Waiting for Expert."</figcaption>
+  </figure>
+
+  <p>
+    The thing I find most satisfying here is how little the sketches had to
+    change. The status line, the physical dimensions in metres rather than
+    arbitrary units, and the hold while the expert reviews are all decisions
+    that were made on paper first.
+  </p>
+
+  <h2>What I took from it</h2>
+  <p>
+    How different shared design work is from design I own alone. On my previous
+    project I made the visual calls myself and could simply decide. Here every
+    idea had to survive a group, and I learned that a drawing is a far better
+    argument than a description. The three-window system diagram and the
+    before-and-after room ended debates that had been going in circles, not
+    because they were persuasive but because they were specific.
+  </p>
+
+  <nav class="case-nav">
+    <a href="../index.html#work">← All work</a>
+    <a href="family-of-buttons.html">Next: A Family of Buttons →</a>
+  </nav>
+
+</main>
+
+<footer class="foot">
+  <span>Amina Abdi</span>
+  <span>Built with AI assistance</span>
+  <span>&copy; 2026</span>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
