@@ -246,6 +246,10 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
     document: `
       <rect x="38" y="30" width="104" height="132" rx="20"/>
       <rect x="58" y="56" width="104" height="132" rx="20"/>`,
+    portal: `
+      <rect x="26" y="26" width="148" height="148" rx="34"/>
+      <rect x="58" y="58" width="84" height="84" rx="22"/>
+      <circle cx="100" cy="100" r="15"/>`,
     orbit: `
       <circle cx="100" cy="100" r="52"/>
       <circle cx="100" cy="30"  r="15"/>
